@@ -230,8 +230,8 @@ module.exports = function() {
 		return ('/blog/' + categorySlug);
 	};
 
-	_helpers.commiteeUrl = function(memberSlug, options) {
-		return ('/commitee/member/' + memberSlug);
+	_helpers.committeeUrl = function(memberSlug, options) {
+		return ('/committee/member/' + memberSlug);
 	};
 	
 	// ### Pagination Helpers

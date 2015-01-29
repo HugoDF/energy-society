@@ -28,20 +28,18 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views')
+	views: importRoutes('./views'),
 };
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
 	
 	// Views
-	app.get('/', function(req,res){
-		res.redirect('/section/conference');
-	});
+	app.get('/', routes.views.home);
 	app.get('/home', routes.views.index);
 	app.get('/events', routes.views.events);
-	app.get('/commitee', routes.views.commitee);
-	app.get('/commitee/member/:member', routes.views.commiteemember);
+	app.get('/committee', routes.views.committee);
+	app.get('/committee/member/:member', routes.views.committeemember);
 	app.get('/section/:section', routes.views.section);
 	app.all('/contact', routes.views.contact);
 

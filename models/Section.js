@@ -14,14 +14,23 @@ var Section = new keystone.List('Section', {
 
 Section.add({
 	title: { type: String, required: true },
-	state: { type: Types.Select, options: 'hidden, published', default: 'published', index: true },
+	state: { type: Types.Select, options: 'hidden, published, draft', default: 'published', index: true },
 	image: { type: Types.CloudinaryImage, autoCleanup:true },
 	content: {type: Types.Html, wysiwyg: true, height: 400 },
 	redirectURL: {type: Types.Url, hidden:true},
   defaultImage: { type: Types.Url, hidden: true},
+  homepage: {type: Types.Select, options: 'true' ,index:{sparse:true, unique:true}},
 });
 
 
+Section.schema.virtual('isHomepage').get(function(){
+  if(this.homepage==='true'){
+    return true;
+  }
+  else{
+    return false;
+  }
+});
 Section.schema.virtual('hasRedirect').get(function() {
   if(this.redirectURL){
     return true;
@@ -40,5 +49,5 @@ Section.schema.virtual('hasDefaultImage').get(function(){
   }
 });
 
-Section.defaultColumns = 'title, state|20%';
+Section.defaultColumns = 'title, state, homepage';
 Section.register();

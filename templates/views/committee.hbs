@@ -1,0 +1,44 @@
+{{!< default}}
+<div class="container full-width rounded full-height">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="row">
+                <div id="default-display">
+                    <h1>Welcome,</h1>
+                    <h1>Meet the committee</h1>
+                </div>
+                <div id="interactive-display" class="invisible">
+                    <div class="col-md-5 column">
+                        <div class="square profile-picture"></div>
+                        <h3 class="title name"></h3>
+                        <div class="position"></div>
+                        <a class="website" target="_blank" href="//facebook.com">helloworld.com</a>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1 column">
+                        <div class="description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="committee">
+                    {{# each data.committee}}
+                        <a class="committee-member-link col-sm-12 col-md-3" data-slug={{slug}} href="{{committeeUrl slug}}">
+                            <div class="committee-member">
+                                {{#if image.exists}}
+                                <div class="square profile-picture" style="background-image:url('{{image}}')"></div>
+                                {{/if}}
+                                <div class="square profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                                <h3 class="title name">{{name.full}}</h3>
+                                <div class="position">{{{position}}}</div>
+                                <div class="website hidden">{{{website}}}</div>
+                                <div class="description hidden">{{{description}}}</div>
+                            </div>
+                        </a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

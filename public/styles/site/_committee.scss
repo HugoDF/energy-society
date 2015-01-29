@@ -1,0 +1,81 @@
+#default-display{
+    text-align: left;
+    position: absolute;
+    top:12rem;
+    left: 18rem;
+    -webkit-transition: opacity 1s;
+       -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+         -o-transition: opacity 1s;
+            transition: opacity 1s;
+    &.no-opacity{
+        opacity:0;
+    }
+}
+#interactive-display{
+    opacity: 0;
+    &.invisible{
+        visibility: hidden;
+    }
+    & > div{
+        background: rgba(100,100,100,.6);
+        border-radius: 5px;
+    }
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: inline-block;
+    .title.name{
+        margin-bottom: 1rem;
+    }
+    -webkit-transition: opacity .5s;
+       -moz-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+         -o-transition: opacity .5s;
+            transition: opacity .5s;
+    &.opaque{
+        opacity:1;
+        visibility: visible;
+    }
+}
+.committee{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+.committee{
+    .title.name{
+        margin-bottom: 1rem;
+        height: 5.5rem;
+    }
+}
+.committee-member-link, 
+.committee-member-link:active, 
+.committee-member-link:hover, 
+.committee-member-link:visited, 
+.committee-member-link:focus{
+    display: inline-block;
+    color: #f8f8f8;
+    text-decoration: none;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+.committee-member{
+    text-align: center;
+    //width: 40%;
+}
+.profile-picture{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.description{
+    line-height: 2.5rem;
+}
+.position{
+    line-height: 2rem;
+}

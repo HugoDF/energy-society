@@ -6,16 +6,17 @@ var keystone = require('keystone'),
  * ==========
  */
 
-var CommiteeMember = new keystone.List('CommiteeMember', {
+var CommitteeMember = new keystone.List('CommitteeMember', {
   map: { name:'name' },
   autokey: { path: 'slug', from: 'name', unique: true},
   sortable: true,
 });
 
-CommiteeMember.add({
+CommitteeMember.add({
 	name: { type: Types.Name, required: true, index: true },
   type: { type: Types.Select, options: 'current, past, hidden', default: 'current', index: true},
 	image: { type: Types.CloudinaryImage },
+  position: { type: Types.Html, wysiwig: true, height: 40 },
 	description: { type: Types.Html, wysiwyg: true, height: 400 },
 	website: { type: Types.Url},
 });
@@ -24,5 +25,5 @@ CommiteeMember.add({
  * Registration
  */
 
-CommiteeMember.defaultColumns = 'name, type|20%';
-CommiteeMember.register();
+CommitteeMember.defaultColumns = 'name, position, type';
+CommitteeMember.register();

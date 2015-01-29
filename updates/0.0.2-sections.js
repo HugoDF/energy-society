@@ -14,7 +14,8 @@ exports.create = {
 			'title': 'Conference', 
 			'sortOrder':'1', 
 			'content':con, 
-			'defaultImage': '/images/wind-farm-light.jpg'
+			'defaultImage': '/images/wind-farm-light.jpg',
+			'homepage': 'true',
 		},
 		{ 
 			'title': 'Home', 
@@ -28,9 +29,9 @@ exports.create = {
 			'defaultImage': '/images/energy-management.jpg'
 		},
 		{ 
-			'title': 'Commitee', 
+			'title': 'Committee', 
 			'sortOrder': '4', 
-			'redirectURL': '/commitee'
+			'redirectURL': '/committee'
 		},
 		{ 
 			'title': 'Events', 

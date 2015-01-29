@@ -7,7 +7,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	// Set locals
-	locals.section = 'commitee';
+	locals.section = 'committee';
 	locals.filters = {
 		member: req.params.member
 	};
@@ -18,7 +18,7 @@ exports = module.exports = function(req, res) {
 	// Load the current post
 	view.on('init', function(next) {
 		
-		var q = keystone.list('CommiteeMember').model.findOne({
+		var q = keystone.list('CommitteeMember').model.findOne({
 			type: 'current',
 			slug: locals.filters.member
 		});
@@ -29,6 +29,6 @@ exports = module.exports = function(req, res) {
 		
 	});
 	// Render the view
-	view.render('commiteemember');
+	view.render('committeemember');
 	
 };

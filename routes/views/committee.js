@@ -7,23 +7,23 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	// Init locals
-	locals.section = 'commitee';
+	locals.section = 'committee';
 	locals.data = {
-		commitee: []
+		committee: []
 	};
 	
 	// Load the posts
 	view.on('init', function(next) {
 		
-		var q = keystone.list('CommiteeMember').model.find({'type':'current'}).sort('sortOrder');
+		var q = keystone.list('CommitteeMember').model.find({'type':'current'}).sort('sortOrder');
 		
 		q.exec(function(err, results) {
-			locals.data.commitee = results;
+			locals.data.committee = results;
 			next(err);
 		});
 		
 	});
 	
 	// Render the view
-	view.render('commitee');
+	view.render('committee');
 };

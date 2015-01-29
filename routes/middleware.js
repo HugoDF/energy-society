@@ -14,24 +14,20 @@ var _ = require('underscore'),
 
 /**
 	Initialises the standard view locals
-	
-	The included layout depends on the navLinks array to generate
-	the navigation in the header, you may wish to change this array
-	or replace it with your own templates / logic.
 */
-
 exports.initLocals = function(req, res, next) {
 	
 	var locals = res.locals;
 	
-	locals.navLinks = [/*
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
-		{ label: 'Contact',		key: 'contact',		href: '/contact' }*/
-	];
-	keystone.list('Section').model.where('state','published').find().sort('order').exec(function(err, results){
-		//console.log(results);
+	locals.navLinks = [];
+	keystone.list('Section').model.where('state','published').find().sort('sortOrder').exec(function(err, results){
+		var homepage = _.filter(results, function(obj) {
+			return obj.isHomepage;
+		});
+		results = _.filter(results,function(obj){
+			return !obj.isHomepage;
+		});
+		results = Array.prototype.concat(homepage, results);
 		for(var i=0; i<results.length;i++){
 			var URL;
 			if(results[i].redirectURL){
