@@ -38,10 +38,14 @@ body {
   background: rgba(0, 104, 139, 0.9);
   color: #f8f8f8; }
   .container.rounded {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden; }
   .container.full-width {
     width: 100%; }
+  .container.full-height {
+    min-height: 100%; }
 
 .column {
   padding: 3rem; }
@@ -91,6 +95,8 @@ body {
     visibility: hidden; }
   #interactive-display > div {
     background: rgba(100, 100, 100, 0.6);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px; }
   #interactive-display .title.name {
     margin-bottom: 1rem; }
@@ -112,19 +118,39 @@ body {
   text-decoration: none;
   margin-bottom: 3rem;
   margin-top: 3rem; }
+  @media all and (max-width: 1024px) {
+    .committee-member-link, .committee-member-link:active, .committee-member-link:hover, .committee-member-link:visited, .committee-member-link:focus {
+      width: 100%; } }
 
 .committee-member {
   text-align: center; }
 
 .profile-picture {
-  width: 45%;
   margin-left: auto;
   margin-right: auto;
   background-position: 50% 50%;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: solid 2px #eeeeee; }
+
+.square {
+  height: 75px;
+  width: 45%; }
+  @media all and (max-width: 1024px) {
+    .square {
+      width: 75px; } }
+
+.aspect-ratio {
+  height: 130px;
+  width: 45%; }
+  @media all and (max-width: 1024px) {
+    .aspect-ratio {
+      width: 75px; } }
 
 .description {
   line-height: 2.5rem; }
 
 .position {
-  line-height: 2rem; }
+  height: 4rem; }

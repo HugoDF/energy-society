@@ -19,6 +19,7 @@ CommitteeMember.add({
   position: { type: Types.Html, wysiwig: true, height: 40 },
 	description: { type: Types.Html, wysiwyg: true, height: 400 },
 	website: { type: Types.Url},
+  defaultImage: { type: Types.Url, hidden:true},
 });
 
 /**

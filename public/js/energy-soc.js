@@ -14,7 +14,7 @@ function eqCols(identifierString){
 function grabcommitteeMemberData(identifierString){
   var name = $(identifierString).find('.name.title').html();
   var position = $(identifierString).find('.position').html();
-  var imageSrc = $(identifierString).find('.square.profile-picture').css('background-image');
+  var imageSrc = $(identifierString).find('.profile-picture').css('background-image');
   var description = $(identifierString).find('.description').html();
   var website = $(identifierString).find('.website').html();
   var url = '//' + website;
@@ -31,7 +31,7 @@ function grabcommitteeMemberData(identifierString){
 function insertcommitteeMemberData(identifierString, data){
   $(identifierString+' .title.name').html(data.name);
   $(identifierString+' .position').html(data.position);
-  $(identifierString+' .square.profile-picture').css('background-image', data.imageSrc);
+  $(identifierString+' .profile-picture').css('background-image', data.imageSrc);
   $(identifierString+' .description').html(data.description);
   $(identifierString+' .website').html(data.website).attr('href', data.url);
 }
@@ -40,10 +40,16 @@ $(document).ready(function(){
   $('.square').each(function(){
     $(this).height($(this).width());
   });
+  $('.aspect-ratio').each(function(){
+    $(this).height($(this).width()*13/10);
+  });
   $(window).resize(function(){
     $('.section, .full-height').css({minHeight:$(window).height()-52});
     $('.square').each(function(){
       $(this).height($(this).width());
+    });
+    $('.aspect-ratio').each(function(){
+      $(this).height($(this).width()*13/10);
     });
   });
   if($('.committee').length>0 && $(window).width()>768){

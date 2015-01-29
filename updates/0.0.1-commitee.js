@@ -11,13 +11,13 @@ var con = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac leo n
 exports.create = {
 	CommitteeMember: [
 	//real committee
-		{ 'name.first': 'Jack', 'name.last': '', 'position': 'President', 'description': con, 'website': web},
-		{ 'name.first': 'Pavel', 'name.last': '', 'position': 'Treasurer', 'description': con, 'website': web},
-		{ 'name.first': 'Vladimir', 'name.last': '', 'position': 'Chairman', 'description': con, 'website': web},
-		{ 'name.first': 'Maxim', 'name.last': '', 'position': 'Vice-Chairman', 'description': con, 'website': web},
-		{ 'name.first': 'Camille', 'name.last': '', 'position': 'Vice-President', 'description': con, 'website': web},
-		{ 'name.first': 'Daniel', 'name.last': '', 'position': 'Head of Conference', 'description': con, 'website': web},
-		{ 'name.first': 'Emmanuel', 'name.last': '', 'position': 'Head of Events and Communication', 'description': con, 'website': web},
+		{ 'name.first': 'Jack', 'name.last': '', 'position': 'President', 'description': con, 'website': web, 'defaultImage': '/images/jack.jpg',},
+		{ 'name.first': 'Pavel', 'name.last': '', 'position': 'Treasurer', 'description': con, 'website': web, 'defaultImage': '/images/pavel.jpg',},
+		{ 'name.first': 'Vladimir', 'name.last': '', 'position': 'Chairman', 'description': con, 'website': web, 'defaultImage': '/images/vladimir.jpg',},
+		{ 'name.first': 'Maxim', 'name.last': '', 'position': 'Vice-Chairman', 'description': con, 'website': web, 'defaultImage': '/images/maxim.jpg',},
+		{ 'name.first': 'Camille', 'name.last': '', 'position': 'Vice-President', 'description': con, 'website': web, 'defaultImage': '/images/camille.jpg',},
+		{ 'name.first': 'Daniel', 'name.last': '', 'position': 'Head of Conference', 'description': con, 'website': web, 'defaultImage': '/images/daniel.jpg',},
+		{ 'name.first': 'Emmanuel', 'name.last': '', 'position': 'Head of Events and Communication', 'description': con, 'website': web, 'defaultImage': '/images/emmanuel.jpg',},
 		//dummy data
 		{ 'name.first': 'admin', 'name.last': 'User', 'position': 'World Leader', 'description': con, 'website': web},
 		{ 'name.first': 'hello', 'name.last': 'world', 'position': 'President', 'description': con, 'website': web},

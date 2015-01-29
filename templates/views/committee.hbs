@@ -9,7 +9,7 @@
                 </div>
                 <div id="interactive-display" class="invisible">
                     <div class="col-md-5 column">
-                        <div class="square profile-picture"></div>
+                        <div class="aspect-ratio profile-picture"></div>
                         <h3 class="title name"></h3>
                         <div class="position"></div>
                         <a class="website" target="_blank" href="//facebook.com">helloworld.com</a>
@@ -26,9 +26,14 @@
                         <a class="committee-member-link col-sm-12 col-md-3" data-slug={{slug}} href="{{committeeUrl slug}}">
                             <div class="committee-member">
                                 {{#if image.exists}}
-                                <div class="square profile-picture" style="background-image:url('{{image}}')"></div>
+                                <div class="aspect-ratio profile-picture" style="background-image:url('{{image}}')"></div>
                                 {{/if}}
-                                <div class="square profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                                {{#if defaultImage}}
+                                <div class="aspect-ratio profile-picture" style="background-image:url('{{defaultImage}}')"></div>
+                                {{else}}
+                                <div class="aspect-ratio profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                                {{/if}}
+                                
                                 <h3 class="title name">{{name.full}}</h3>
                                 <div class="position">{{{position}}}</div>
                                 <div class="website hidden">{{{website}}}</div>

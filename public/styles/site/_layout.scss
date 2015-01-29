@@ -44,11 +44,16 @@ body{
     color: #f8f8f8;
     //margin-top: .5rem;
     &.rounded{
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
         border-radius: 5px;
         overflow: hidden;
     }
     &.full-width{
         width: 100%;
+    }
+    &.full-height{
+        min-height: 100%;
     }
 }
 .column{
