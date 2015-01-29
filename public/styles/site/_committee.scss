@@ -3,6 +3,11 @@
     position: absolute;
     top:12rem;
     left: 18rem;
+    @media all and (max-width: 1024px){
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
     -webkit-transition: opacity 1s;
        -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
@@ -41,6 +46,9 @@
     &.opaque{
         opacity:1;
         visibility: visible;
+    }
+    @media all and (max-width: 1024px){
+        display: none;
     }
 }
 .committee{
