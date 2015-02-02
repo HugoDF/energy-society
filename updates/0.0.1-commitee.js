@@ -11,18 +11,16 @@ var con = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac leo n
 exports.create = {
 	CommitteeMember: [
 	//real committee
-		{ 'name.first': 'Jack', 'name.last': '', 'position': 'President', 'description': con, 'website': web, 'defaultImage': '/images/jack.jpg',},
-		{ 'name.first': 'Pavel', 'name.last': '', 'position': 'Treasurer', 'description': con, 'website': web, 'defaultImage': '/images/pavel.jpg',},
-		{ 'name.first': 'Vladimir', 'name.last': '', 'position': 'Chairman', 'description': con, 'website': web, 'defaultImage': '/images/vladimir.jpg',},
-		{ 'name.first': 'Maxim', 'name.last': '', 'position': 'Vice-Chairman', 'description': con, 'website': web, 'defaultImage': '/images/maxim.jpg',},
-		{ 'name.first': 'Camille', 'name.last': '', 'position': 'Vice-President', 'description': con, 'website': web, 'defaultImage': '/images/camille.jpg',},
-		{ 'name.first': 'Daniel', 'name.last': '', 'position': 'Head of Conference', 'description': con, 'website': web, 'defaultImage': '/images/daniel.jpg',},
-		{ 'name.first': 'Emmanuel', 'name.last': '', 'position': 'Head of Events and Communication', 'description': con, 'website': web, 'defaultImage': '/images/emmanuel.jpg',},
-		//dummy data
-		{ 'name.first': 'admin', 'name.last': 'User', 'position': 'World Leader', 'description': con, 'website': web},
-		{ 'name.first': 'hello', 'name.last': 'world', 'position': 'President', 'description': con, 'website': web},
-		{ 'name.first': 'Hugo', 'name.last': 'Di Francesco', 'position': 'Grunt', 'description': con, 'website': web},
-		{ 'name.first': 'hello', 'name.last': 'world', 'position': 'Vice-president', 'description': con, 'website': web},
+		{ 'name.first': 'Jack', 'name.last': 'Woodnott', 'position': 'President', 'description': con, 'website': web, 'defaultImage': '/images/jack.jpg',},
+		{ 'name.first': 'Camille', 'name.last': 'Ng', 'position': 'Vice-President', 'description': con, 'website': web, 'defaultImage': '/images/camille.jpg',},
+		{ 'name.first': 'Pavel', 'name.last': 'Degtiarev', 'position': 'Treasurer', 'description': con, 'website': web, 'defaultImage': '/images/pavel.jpg',},
+		{ 'name.first': 'Daniel', 'name.last': 'Lengyel', 'position': 'Head of Conference', 'description': con, 'website': web, 'defaultImage': '/images/daniel.jpg',},
+		{ 'name.first': 'Kim', 'name.last': 'Diep', 'position': 'Postgraduate Officer', 'description': con, 'website': web},
+		{ 'name.first': 'Talha', 'name.last': 'Pirzada', 'position': 'Postgraduate Officer', 'description': con, 'website': web},
+		{ 'name.first': 'Phil', 'name.last': 'Glocker', 'position': 'Postgraduate Officer', 'description': con, 'website': web},
+		{ 'name.first': 'Emmanuel', 'name.last': 'Vila', 'position': 'Head of Events and Communication', 'description': con, 'website': web, 'defaultImage': '/images/emmanuel.jpg',},
+		{ 'name.first': 'Vladimir', 'name.last': 'Kardapoltsev', 'position': 'Chairman', 'description': con, 'website': web, 'defaultImage': '/images/vladimir.jpg',},
+		{ 'name.first': 'Maxim', 'name.last': 'Rozhdov', 'position': 'Vice-Chairman', 'description': con, 'website': web, 'defaultImage': '/images/maxim.jpg',},
 	]
 };
 /*
