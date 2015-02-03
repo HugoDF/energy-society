@@ -79,6 +79,9 @@
 .committee-member{
     text-align: center;
     //width: 40%;
+    @media all and (max-width: 1024px){
+        border-bottom: solid 2px;
+    }
 }
 .profile-picture{
     margin-left: auto;
