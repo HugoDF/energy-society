@@ -41,7 +41,7 @@ exports.initLocals = function(req, res, next) {
 			var obj = {label:results[i].title, key:results[i].slug, href: URL};
 			locals.navLinks.push(obj);
 		}
-		console.log(locals.navLinks);
+		//console.log(locals.navLinks);
 		locals.user = req.user;
 		next();
 	});
