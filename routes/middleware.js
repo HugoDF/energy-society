@@ -20,6 +20,7 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [];
+
 	keystone.list('Section').model.where('state','published').find().sort('sortOrder').exec(function(err, results){
 		var homepage = _.filter(results, function(obj) {
 			return obj.isHomepage;
@@ -40,12 +41,10 @@ exports.initLocals = function(req, res, next) {
 			var obj = {label:results[i].title, key:results[i].slug, href: URL};
 			locals.navLinks.push(obj);
 		}
+		console.log(locals.navLinks);
+		locals.user = req.user;
+		next();
 	});
-	
-	locals.user = req.user;
-	
-	next();
-	
 };
 
 
