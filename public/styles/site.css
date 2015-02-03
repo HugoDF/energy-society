@@ -3,6 +3,11 @@ body {
   height: 100%;
   font-family: 'Arvo', serif; }
 
+@media all and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem; }
+ }
+
 #body {
   padding-top: 52px;
   height: 100%;
@@ -12,6 +17,10 @@ body {
   display: block;
   max-width: 100%;
   height: auto; }
+
+.all-white, .all-white:active, .all-white:hover, .all-white:visited, .all-white:focus {
+  color: #f8f8f8;
+  text-decoration: none; }
 
 .container {
   background: rgba(0, 104, 139, 0.9);
@@ -40,6 +49,10 @@ body {
 .title {
   margin-bottom: 6rem;
   margin-top: 6rem; }
+  @media all and (max-width: 1024px) {
+    .title {
+      margin-top: 3rem;
+      margin-bottom: 3rem; } }
 
 .title.name {
   text-transform: capitalize; }
@@ -91,7 +104,8 @@ body {
     #default-display {
       position: static;
       width: 100%;
-      text-align: center; } }
+      text-align: center;
+      padding-top: 3rem; } }
   #default-display.no-opacity {
     opacity: 0; }
 
