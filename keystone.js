@@ -32,6 +32,10 @@ keystone.init({
 	
 	'emails': 'templates/emails',
 	
+	'signout redirect': '/',
+	'wysiwig images': true,
+	'wysiwig cloudinary images': true,
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -112,14 +116,14 @@ keystone.start(function(){
 	if(process.env.NODE_ENV=='production'){
 		var http = require('http');
 		function wake(){
-		  http.get("http://uclu-energy.herokuapp.com", function(res) {
-		    var date = new Date();
-		    console.log("Response: " + res.statusCode + ' Time: '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds());
-		  }).on('error', function(e) {
-		    console.log("Got error: " + e.message);
-		  });
-		}
-		wake();
-		setInterval(wake,1500000);
+			http.get("http://uclu-energy.herokuapp.com", function(res) {
+			var date = new Date();
+			console.log("Response: " + res.statusCode + ' Time: '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds());
+		}).on('error', function(e) {
+			console.log("Got error: " + e.message);
+		});
+	}
+	wake();
+	setInterval(wake,1500000);
 	}
 });

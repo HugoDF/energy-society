@@ -69,6 +69,40 @@ module.exports = function(grunt) {
 			}
 		},
 
+		sass: {
+			bootstrap:{
+				options: {
+					style: 'compressed',
+					sourcemap: 'none',
+				},
+				files: {
+					'public/styles/bootstrap.min.css': 'public/styles/bootstrap.scss'
+				}
+			},
+
+			dist: {
+				options: {
+					style: 'compressed',
+					sourcemap: 'none',
+				},
+				files: {
+					'public/styles/site.min.css': 'public/styles/site.scss'
+				}
+			}
+		},
+
+		uglify: {
+			dist: {
+				options:{
+					compress: true,
+					mangle: true
+				},
+				files: {
+					'public/js/energy-soc.min.js': 'public/js/energy-soc.js'
+				},
+			},
+		},
+
 		watch: {
 			js: {
 				files: [
@@ -97,7 +131,9 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-
+	// load tasks from npm modules
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	// load jshint
 	grunt.registerTask('lint', function(target) {
 		grunt.task.run([
@@ -117,5 +153,7 @@ module.exports = function(grunt) {
 		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
 		grunt.task.run(['serve:' + target]);
 	});
+
+	grunt.registerTask('build', ['sass:bootstrap','sass:dist', 'uglify:dist'] );
 
 };

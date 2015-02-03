@@ -6,8 +6,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Energy Society</title>
 		<link rel="shortcut icon" href="/images/uclu-logo-flame-black.png" type="image/png">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link href="/styles/bootstrap.min.css" rel="stylesheet">
+		{{#ifeq env 'production'}}
+		<link href="/styles/site.min.css" rel="stylesheet">
+		{{else}}
 		<link href="/styles/site.css" rel="stylesheet">
+		{{/ifeq}}
 		<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 		
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor 
@@ -51,15 +55,15 @@
 									</li>
 								{{/each}}
 							</ul>
-							{{!--
 							<ul class="nav navbar-nav navbar-right">
 								{{#if user}}
 								<li><a href="/keystone/signout">Sign Out</a></li>
+								{{!--}}
 								{{else}}
 								<li><a href="/keystone/signin">Sign In</a></li>
+								--}}
 								{{/if}}
 							</ul>
-							--}}
 						</div>
 					</div>
 				</div>
@@ -113,7 +117,11 @@
 			//- them specifically here, instead of bootstrap-3.2.0.min.js
 		--}}
 		<script src="/js/lib/bootstrap/bootstrap-3.2.0.min.js"></script>
+		{{#ifeq env 'production'}}
+		<script src="/js/energy-soc.min.js"></script>
+		{{else}}
 		<script src="/js/energy-soc.js"></script>
+		{{/ifeq}}
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>
