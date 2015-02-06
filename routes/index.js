@@ -46,6 +46,7 @@ exports = module.exports = function(app) {
 	app.get('/home', routes.views.index);
 	app.get('/events', routes.views.events);
 	app.get('/committee', routes.views.committee);
+	app.get('/speakers', routes.views.speaker);
 	app.get('/committee/member/:member', routes.views.committeemember);
 	app.all('/contact', routes.views.contact);
 

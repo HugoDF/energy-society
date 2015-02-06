@@ -1,0 +1,42 @@
+.speakers{
+    padding:6rem 0;
+    @media all and (min-width: 624px){
+        text-align: justify;
+    }
+}
+.picture-container{
+    text-align: center;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding-top: 2rem;
+    margin-right: 3%;
+    @media all and(max-width: 1024px){
+        margin-right: 0;
+        width: 100%;
+    }
+}
+.speaker .profile-picture{
+    width: 145px;
+    height: 200px;
+}
+.speaker .name{
+    padding-left: 0;
+    float: left;
+    &:after{
+        content: '-';
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+.speaker .position{
+    float: left;
+}
+.speaker{
+    display: inline-block;
+    @media all and (max-width: 1024px){
+        padding: 3rem 6rem;
+    }
+    padding-bottom: 3rem;
+    border-bottom: solid 2px;
+}

@@ -159,6 +159,9 @@ body {
 
 .committee-member {
   text-align: center; }
+  @media all and (max-width: 1024px) {
+    .committee-member {
+      border-bottom: solid 2px; } }
 
 .profile-picture {
   margin-left: auto;
@@ -189,3 +192,44 @@ body {
 
 .position {
   height: 4rem; }
+
+.speakers {
+  padding: 6rem 0; }
+  @media all and (min-width: 624px) {
+    .speakers {
+      text-align: justify; } }
+
+.picture-container {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  height: 100%;
+  padding-top: 2rem;
+  margin-right: 3%; }
+  @media all and (max-width: 1024px) {
+    .picture-container {
+      margin-right: 0;
+      width: 100%; } }
+
+.speaker .profile-picture {
+  width: 145px;
+  height: 200px; }
+
+.speaker .name {
+  padding-left: 0;
+  float: left; }
+  .speaker .name:after {
+    content: '-';
+    margin-left: 1rem;
+    margin-right: 1rem; }
+
+.speaker .position {
+  float: left; }
+
+.speaker {
+  display: inline-block;
+  padding-bottom: 3rem;
+  border-bottom: solid 2px; }
+  @media all and (max-width: 1024px) {
+    .speaker {
+      padding: 3rem 6rem; } }

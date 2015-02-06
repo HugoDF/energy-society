@@ -6,11 +6,12 @@
                 <div class="col-md-5 column text-center">
                     {{#if data.member.image.exists}}
                     <div class="aspect-ratio profile-picture" style="background-image:url('{{data.member.image}}')"></div>
-                    {{/if}}
-                    {{#if data.member.defaultImage}}
-                    <div class="aspect-ratio profile-picture" style="background-image:url('{{data.member.defaultImage}}')"></div>
                     {{else}}
-                    <div class="aspect-ratio profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                        {{#if data.member.defaultImage}}
+                        <div class="aspect-ratio profile-picture" style="background-image:url('{{data.member.defaultImage}}')"></div>
+                        {{else}}
+                        <div class="aspect-ratio profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                        {{/if}}
                     {{/if}}
                     <h3 class="title name">{{{data.member.name.full}}}</h3>
                     <div class="position">{{{data.member.position}}}</div>

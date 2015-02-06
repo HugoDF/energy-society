@@ -27,11 +27,12 @@
                             <div class="committee-member">
                                 {{#if image.exists}}
                                 <div class="aspect-ratio profile-picture" style="background-image:url('{{image}}')"></div>
-                                {{/if}}
-                                {{#if defaultImage}}
-                                <div class="aspect-ratio profile-picture" style="background-image:url('{{defaultImage}}')"></div>
                                 {{else}}
-                                <div class="aspect-ratio profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                                    {{#if defaultImage}}
+                                    <div class="aspect-ratio profile-picture" style="background-image:url('{{defaultImage}}')"></div>
+                                    {{else}}
+                                    <div class="aspect-ratio profile-picture" style="background-image:url('/images/uclu.png')"></div>
+                                    {{/if}}
                                 {{/if}}
                                 
                                 <h3 class="title name">{{name.full}}</h3>
