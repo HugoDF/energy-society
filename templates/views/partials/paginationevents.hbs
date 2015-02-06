@@ -1,0 +1,13 @@
+<ul class="pagination">
+	<li {{#unless data.events.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationPreviousUrl data.events.previous data.events.totalPages '/events'}}">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</li>
+	{{{paginationNavigation data.events.pages data.events.currentPage data.events.totalPages '/events'}}}
+	<li {{#unless data.events.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationNextUrl data.events.next data.events.totalPages '/events'}}">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</li>
+</ul>

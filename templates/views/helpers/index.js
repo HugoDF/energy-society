@@ -222,7 +222,7 @@ module.exports = function() {
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function(pageNumber, options) {
-		return '/blog?page=' + pageNumber;
+		return (options||'/blog')+'?page=' + pageNumber;
 	};
 	
 	// create the category url for a blog-category page
@@ -233,6 +233,10 @@ module.exports = function() {
 	_helpers.committeeUrl = function(memberSlug, options) {
 		return ('/committee/member/' + memberSlug);
 	};
+
+	_helpers.eventUrl = function(eventSlug, options){
+		return ('/events/event/' + eventSlug);
+	}
 	
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
@@ -274,7 +278,7 @@ module.exports = function() {
 			}
 
 			// get the pageUrl using the integer value
-			var pageUrl = _helpers.pageUrl(page);
+			var pageUrl = _helpers.pageUrl(page, options);
 			// wrapup the html
 			html += '<li'+liClass+'>'+ linkTemplate({url:pageUrl,text:pageText})+'</li>\n';
 		});
@@ -283,20 +287,20 @@ module.exports = function() {
 
         // special helper to ensure that we always have a valid page url set even if
         // the link is disabled, will default to page 1
-        _helpers.paginationPreviousUrl = function(previousPage, totalPages){
+        _helpers.paginationPreviousUrl = function(previousPage, totalPages, options){
             if(previousPage === false){
                 previousPage = 1;
             }
-            return _helpers.pageUrl(previousPage);
+            return _helpers.pageUrl(previousPage, options);
         };
 
         // special helper to ensure that we always have a valid next page url set
         // even if the link is disabled, will default to totalPages
-        _helpers.paginationNextUrl = function(nextPage, totalPages){
+        _helpers.paginationNextUrl = function(nextPage, totalPages, options){
             if(nextPage === false){
                 nextPage = totalPages;
             }
-            return _helpers.pageUrl(nextPage);
+            return _helpers.pageUrl(nextPage, options);
         };
 
 

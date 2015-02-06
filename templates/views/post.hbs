@@ -9,8 +9,10 @@
 						{{{categoryList data.post.categories prefix="Posted in "}}}
 						{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</h5>
-				<div class="banner" style="background-image: url('{{data.post.image.url}}'); height: 20rem;height20vh; margin-bottom:6rem">
+				{{#if image.exists}}
+				<div class="banner limit-height" style="background-image: url('{{data.post.image.url}}');margin-bottom:6rem;">
 				</div>
+				{{/if}}
 				<div class="post">
 					{{{data.post.content}}}
 				</div>

@@ -73,14 +73,29 @@ body{
     width: 100%;
     background-size:contain;
     background-position: 50% 50%;
+    &.limit-height{
+        height: 20rem;
+        height: 20vh;
+        &.half{
+            height: 50vh;
+        }
+        &.three-quarter{
+            height: 75vh;   
+        }
+    }
 }
 .acknowledgments:hover{
     //border-bottom: solid 1px;
 }
-.blog{
+.blog, .events{
     padding-bottom: 11rem;
 }
 .pagination-container{
     margin-top: -8rem;
     text-align: center;
+}
+.pagination{
+    &>li:not(.active)>.all-white{
+        color: #428bca;
+    }
 }

@@ -3,6 +3,39 @@
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 			<h1 class="title">Events</h1>
+            {{#if data.events.results}}
+            <div class="events">
+                {{#each data.events.results}}
+                <a href="{{eventUrl slug}}" class="all-white">
+                <div class="event">
+                    {{#ifeq ../env production}}
+                        {{#if image.exists}}
+                            <div class="banner limit-height" style="background-image: url('{{image.url}}');"></div>
+                        {{/if}}
+                    {{else}}
+                        {{#if image.exists}}
+                            <div class="banner limit-height" style="background-image: url('{{image.url}}');"></div>
+                        {{else}}
+                            <div class="banner limit-height" style="background-image: url('/images/carbon-fibre.jpg');"></div>
+                        {{/if}}
+                    {{/ifeq}}
+                    <h3>{{title}}</h3>
+                    {{#if facebookLink}}
+                    <div class="event-link"><a href="//{{facebookLink}}" target="_blank">Facebook Event</a></div>
+                    {{/if}}
+                    <a href="{{eventUrl slug}}" class="all-white">
+                        <div class="date">{{date date format='MMM Do YYYY, hh:mma'}}</div>
+                        <div class="location">Location: {{{location}}}</div>
+                        <div class="description">{{{description}}}</div>
+                    </a>
+                </div>
+                </a>
+                {{/each}}
+            </div>
+            {{else}}
+            <h3> No upcoming events</h3>
+            {{/if}}
 		</div>
 	</div>
 </div>
+<div class="pagination-container">{{>paginationevents}}</div>

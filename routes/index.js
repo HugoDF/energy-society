@@ -45,6 +45,7 @@ exports = module.exports = function(app) {
 	// Hard-coded custom routes
 	app.get('/home', routes.views.index);
 	app.get('/events', routes.views.events);
+	app.get('/events/event/:event', routes.views.event);
 	app.get('/committee', routes.views.committee);
 	app.get('/speakers', routes.views.speaker);
 	app.get('/committee/member/:member', routes.views.committeemember);

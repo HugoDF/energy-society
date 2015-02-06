@@ -35,14 +35,19 @@ function insertcommitteeMemberData(identifierString, data){
   $(identifierString+' .description').html(data.description);
   $(identifierString+' .website').html(data.website).attr('href', data.url);
 }
-$(document).ready(function(){
-  $('.section, .full-height').css({minHeight:$(window).height()-52});
+function fixHeight(){
+  var browserHeight = $(window).height()-52;
+  $('.section, .full-height').css({minHeight:browserHeight});
+  $('.half').css({minHeight: browserHeight/2});
+  $('.three-quarter').css({minHeight: browserHeight*3/4});
+
   $('.square').each(function(){$(this).height($(this).width());});
   $('.aspect-ratio').each(function(){$(this).height($(this).width()*13/10);});
+}
+$(document).ready(function(){
+  fixHeight();
   $(window).resize(function(){
-    $('.section, .full-height').css({minHeight:$(window).height()-52});
-    $('.square').each(function(){$(this).height($(this).width());});
-    $('.aspect-ratio').each(function(){$(this).height($(this).width()*13/10);});
+    fixHeight();
   });
   if($('.committee').length>0 && $(window).width()>768){
     var data = grabcommitteeMemberData('.committee-member-link:first-child');
