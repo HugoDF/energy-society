@@ -26,6 +26,9 @@ body{
     color: #f8f8f8;
     text-decoration: none;
 }
+.all-white:hover{
+    border-bottom: solid 1px;
+}
 .container{
     background: rgba(0,104,139,.9);
     color: #f8f8f8;
@@ -68,4 +71,16 @@ body{
 }
 .banner{
     width: 100%;
+    background-size:contain;
+    background-position: 50% 50%;
+}
+.acknowledgments:hover{
+    //border-bottom: solid 1px;
+}
+.blog{
+    padding-bottom: 11rem;
+}
+.pagination-container{
+    margin-top: -8rem;
+    text-align: center;
 }

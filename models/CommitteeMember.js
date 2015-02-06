@@ -15,7 +15,7 @@ var CommitteeMember = new keystone.List('CommitteeMember', {
 CommitteeMember.add({
 	name: { type: Types.Name, required: true, index: true },
   type: { type: Types.Select, options: 'current, past, hidden', default: 'current', index: true},
-	image: { type: Types.CloudinaryImage },
+	image: { type: Types.CloudinaryImage, autoCleanup:true},
   position: { type: Types.Html, wysiwig: true, height: 40 },
 	description: { type: Types.Html, wysiwyg: true, height: 400 },
 	website: { type: Types.Url},

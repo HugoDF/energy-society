@@ -9,7 +9,7 @@
                             <div class="speaker">
                                 <div class="picture-container">
                                 {{#if image.exists}}
-                                <div class="profile-picture" style="background-image: url('{{image}}')"></div>
+                                <div class="profile-picture" style="background-image: url('{{image.url}}')"></div>
                                 {{else}}
                                     {{#if defaultImage}}
                                     <div class="profile-picture" style="background-image: url('{{defaultImage}}')"></div>
@@ -23,8 +23,8 @@
                                 <div class="col-sm-12 col-md-10">
                                     <div class="row">
                                         <h3>
-                                        <span class="name">{{name.full}}</span>
-                                        <span class="position">{{{position}}}</span>
+                                            <span class="name">{{name.full}}</span>
+                                            <span class="position">{{{position}}}</span>
                                         </h3>
                                     </div>
                                     <div class="row">

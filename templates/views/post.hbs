@@ -1,18 +1,18 @@
-<div class="container">
+<div class="container full-width rounded full-height">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 			<article>
-				<p><a href="/blog">&larr; back to the blog</a></p>
+				<p><a class="all-white" href="/blog"><h1>&larr; back to the blog</h1></a></p>
 				<hr>
-				<header>
-					<h1>{{data.post.title}}</h1>
+					<h1 class="title">{{data.post.title}}</h1>
 					<h5>
 						{{{categoryList data.post.categories prefix="Posted in "}}}
 						{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</h5>
-				</header>
+				<div class="banner" style="background-image: url('{{data.post.image.url}}'); height: 20rem;height20vh; margin-bottom:6rem">
+				</div>
 				<div class="post">
-					{{{data.post.content.extended}}}
+					{{{data.post.content}}}
 				</div>
 			</article>
 		</div>

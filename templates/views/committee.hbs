@@ -12,7 +12,7 @@
                         <div class="aspect-ratio profile-picture"></div>
                         <h3 class="title name"></h3>
                         <div class="position"></div>
-                        <a class="website" target="_blank" href="//facebook.com">helloworld.com</a>
+                        <a class="website all-white" target="_blank" href="//uclu-energy.herokuapp.com">helloworld.com</a>
                     </div>
                     <div class="col-md-6 col-md-offset-1 column">
                         <div class="description">
@@ -26,7 +26,7 @@
                         <a class="committee-member-link col-sm-12 col-md-3" data-slug={{slug}} href="{{committeeUrl slug}}">
                             <div class="committee-member">
                                 {{#if image.exists}}
-                                <div class="aspect-ratio profile-picture" style="background-image:url('{{image}}')"></div>
+                                <div class="aspect-ratio profile-picture" style="background-image:url('{{image.url}}')"></div>
                                 {{else}}
                                     {{#if defaultImage}}
                                     <div class="aspect-ratio profile-picture" style="background-image:url('{{defaultImage}}')"></div>

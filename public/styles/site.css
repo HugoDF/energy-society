@@ -22,6 +22,9 @@ body {
   color: #f8f8f8;
   text-decoration: none; }
 
+.all-white:hover {
+  border-bottom: solid 1px; }
+
 .container {
   background: rgba(0, 104, 139, 0.9);
   color: #f8f8f8; }
@@ -58,7 +61,16 @@ body {
   text-transform: capitalize; }
 
 .banner {
-  width: 100%; }
+  width: 100%;
+  background-size: contain;
+  background-position: 50% 50%; }
+
+.blog {
+  padding-bottom: 11rem; }
+
+.pagination-container {
+  margin-top: -8rem;
+  text-align: center; }
 
 .navbar.navbar-default {
   width: 100%;

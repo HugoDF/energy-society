@@ -37,12 +37,12 @@ exports = module.exports = function(app) {
 	// Views
 	app.get('/', routes.views.home);
 
-	//redirect to keystone for all login
+	// Redirect to keystone for all login
 	app.get('/admin', function(req,res){res.redirect('/keystone');});
 	app.get('/login', function(req,res){res.redirect('/keystone');});
 	app.get('/signin', function(req,res){res.redirect('/keystone');});
 
-	//hard-coded routes
+	// Hard-coded custom routes
 	app.get('/home', routes.views.index);
 	app.get('/events', routes.views.events);
 	app.get('/committee', routes.views.committee);
@@ -50,10 +50,10 @@ exports = module.exports = function(app) {
 	app.get('/committee/member/:member', routes.views.committeemember);
 	app.all('/contact', routes.views.contact);
 
-	//database-driven sections
+	// Database-driven sections
 	app.get('/section/:section', routes.views.section);
 
-	// default gallery and blog
+	// Default gallery and blog
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
