@@ -16,7 +16,7 @@ Event.add({
 	title: { type: String, required: true },
 	date: {type: Types.Datetime, index: true},
 	location: { type: String, initial:true, required: true },
-	facebookLink: {type: Types.Url, index: true},
+	link: {type: Types.Url, index: true},
 	image: { type: Types.CloudinaryImage, autoCleanup:true},
 	content: {type: Types.Html, wysiwyg: true, height: 400 },
 });

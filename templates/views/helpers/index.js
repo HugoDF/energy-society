@@ -237,6 +237,10 @@ module.exports = function() {
 	_helpers.eventUrl = function(eventSlug, options){
 		return ('/events/event/' + eventSlug);
 	}
+
+	_helpers.map = function(location, options){
+		return 'https://maps.google.co.uk?q='+location.replace(' ', '+');
+	}
 	
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
