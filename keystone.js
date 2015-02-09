@@ -33,8 +33,10 @@ keystone.init({
 	'emails': 'templates/emails',
 	
 	'signout redirect': '/',
-	'wysiwig images': true,
-	'wysiwig cloudinary images': true,
+
+
+	'wysiwyg images': true,
+	'wysiwyg cloudinary images': true,
 
 	'auto update': true,
 	'session': true,
