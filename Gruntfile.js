@@ -69,6 +69,32 @@ module.exports = function(grunt) {
 			}
 		},
 
+		imagemin: {
+      dev: {
+        options: {
+          optimizationLevel: 1,
+        },
+        files: [{
+          expand: true,                  
+          cwd: './public/images',          
+          src: ['**/*.{png,jpg,gif}'],   
+          dest: './public/images'                  
+        }]
+      },
+      dist: {
+        options: {
+          optimizationLevel: 7,
+        },
+        files: [{
+          expand: true,                  
+          cwd: './public/images',          
+          src: ['**/*.{png,jpg,gif}'],   
+          dest: './public/images'                  
+        }]
+      },
+    },
+
+
 		sass: {
 			bootstrap:{
 				options: {
@@ -132,8 +158,8 @@ module.exports = function(grunt) {
 		}
 	});
 	// load tasks from npm modules
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	//grunt.loadNpmTasks('grunt-contrib-uglify');
+	//grunt.loadNpmTasks('grunt-contrib-sass');
 	// load jshint
 	grunt.registerTask('lint', function(target) {
 		grunt.task.run([
@@ -154,6 +180,6 @@ module.exports = function(grunt) {
 		grunt.task.run(['serve:' + target]);
 	});
 
-	grunt.registerTask('build', ['sass:bootstrap','sass:dist', 'uglify:dist'] );
+	grunt.registerTask('build', ['sass:bootstrap','sass:dist', 'uglify:dist', 'imagemin:dist'] );
 
 };
