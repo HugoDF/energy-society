@@ -42,6 +42,8 @@ exports = module.exports = function(app) {
 	app.get('/login', function(req,res){res.redirect('/keystone');});
 	app.get('/signin', function(req,res){res.redirect('/keystone');});
 
+	//temp redirect of /conference
+	app.get('/conference', function(req,res){res.redirect('https://uclu.org/whats-on/clubs-societies/energy-society-conference-2015');});
 	// Hard-coded custom routes
 	app.get('/home', routes.views.index);
 	app.get('/events', routes.views.events);
