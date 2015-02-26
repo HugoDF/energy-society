@@ -20,7 +20,8 @@
                 <div class="date">{{date data.event.date format='ddd Do MMM  YYYY, hh:mma'}}</div>
                 <div class="location">
                     <p>Location: {{{data.event.location}}}</p>
-                    <p><a class="all-white small transparent" href="{{map data.event.location}}" target="_blank">See on map</a></p>
+                    {{#if data.event.linkToMap}}
+                    <p><a class="all-white small transparent" href="{{map data.event.location}}" target="_blank">See on map</a></p>{{/if}}
                 </div>
                 <div class="description">{{{data.event.content}}}</div>
             </div>

@@ -14,11 +14,12 @@ var Event = new keystone.List('Event', {
 
 Event.add({
 	title: { type: String, required: true },
-	date: {type: Types.Datetime, index: true},
+	date: {type: Types.Datetime,initial:true, index: true},
 	location: { type: String, initial:true, required: true },
+	linkToMap: { type: Boolean, default: true},
 	link: {type: Types.Url, index: true},
 	image: { type: Types.CloudinaryImage, autoCleanup:true},
 	content: {type: Types.Html, wysiwyg: true, height: 400 },
 });
-Event.defaultColumns = 'title, date, location';
+Event.defaultColumns = 'title, date, location, linkToMap';
 Event.register();

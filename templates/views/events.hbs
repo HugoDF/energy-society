@@ -22,12 +22,16 @@
                     <h1 class="title">{{title}}</h1>
                     {{#if link}}
                     <a class="event-link" href="{{link}}" target="_blank">Go to the Event</a>
+                    {{else}}
+                    <a class="event-link" href="{{eventUrl slug}}">Read more</a>
                     {{/if}}
                     <a href="{{eventUrl slug}}" class="all-white">
                         <div class="date">{{date date format='ddd Do MMM YYYY, hh:mma'}}</div>
                         <div class="location">
                             <p>Location: {{{location}}}</p>
+                            {{#if linkToMap}}
                             <p><a class="all-white small transparent" href="{{map location}}" target="_blank">See on map</a></p>
+                            {{/if}}
                         </div>
                     </a>
                 </div>
