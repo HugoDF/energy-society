@@ -30,7 +30,9 @@
     }
 }
 .speaker .position{
-    float: left;
+    float: none;
+    height: 5rem;
+    overflow: hidden;
 }
 .speaker{
     display: inline-block;

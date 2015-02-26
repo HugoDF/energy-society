@@ -257,7 +257,10 @@ body {
     margin-right: 1rem; }
 
 .speaker .position {
-  float: left; }
+  float: left;
+  float: none;
+  height: 5rem;
+  overflow: hidden; }
 
 .speaker {
   display: inline-block;
