@@ -180,6 +180,6 @@ module.exports = function(grunt) {
 		grunt.task.run(['serve:' + target]);
 	});
 
-	grunt.registerTask('build', ['sass:bootstrap','sass:dist', 'uglify:dist', 'imagemin:dist'] );
+	grunt.registerTask('build', ['sass:bootstrap','sass:dist', 'uglify:dist', 'imagemin:dev'] );
 
 };

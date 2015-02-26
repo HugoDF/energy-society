@@ -35,9 +35,11 @@
                 {{/each}}
             </div>
             {{else}}
-            <h3> No upcoming events</h3>
+            <h3> No upcoming events.</h3>
             {{/if}}
 		</div>
 	</div>
 </div>
+{{#if data.events.results}}
 <div class="pagination-container">{{>paginationevents}}</div>
+{{/if}}

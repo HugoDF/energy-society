@@ -2,40 +2,45 @@
 <div class="container full-width rounded full-height">
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1 col-md-9 col-md-offset-2">
+            <h1 class="title">Speakers</h1>
+            {{#if data.speakers}}
             <div class="row">
                 <div class="speakers">
-                    {{# each data.speakers}}
-                        <div class="row">
-                            <div class="speaker">
-                                <div class="picture-container">
-                                {{#if image.exists}}
-                                <div class="profile-picture" style="background-image: url('{{image.url}}')"></div>
-                                {{else}}
-                                    {{#if defaultImage}}
-                                    <div class="profile-picture" style="background-image: url('{{defaultImage}}')"></div>
+                        {{# each data.speakers}}
+                            <div class="row">
+                                <div class="speaker">
+                                    <div class="picture-container">
+                                    {{#if image.exists}}
+                                    <div class="profile-picture" style="background-image: url('{{image.url}}')"></div>
                                     {{else}}
-                                    <div class="profile-picture" style="background-image: url('/images/uclu.png')"></div>
+                                        {{#if defaultImage}}
+                                        <div class="profile-picture" style="background-image: url('{{defaultImage}}')"></div>
+                                        {{else}}
+                                        <div class="profile-picture" style="background-image: url('/images/uclu.png')"></div>
+                                        {{/if}}
                                     {{/if}}
-                                {{/if}}
-                                </div>
-                                
-
-                                <div class="col-sm-12 col-md-8">
-                                    <div class="row">
-                                        <h3>
-                                            <span class="name">{{name.full}}</span>
-                                            <span class="position">{{{position}}}</span>
-                                        </h3>
                                     </div>
-                                    <div class="row">
-                                        <div class="description">{{{description}}}</div>
+                                    
+
+                                    <div class="col-sm-12 col-md-8">
+                                        <div class="row">
+                                            <h3>
+                                                <span class="name">{{name.full}}</span>
+                                                <span class="position">{{{position}}}</span>
+                                            </h3>
+                                        </div>
+                                        <div class="row">
+                                            <div class="description">{{{description}}}</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {{/each}}
+                        {{/each}}
                 </div>
             </div>
+            {{else}}
+                <h3>No upcoming speakers.</h3>
+            {{/if}}
         </div>
     </div>
 </div>
