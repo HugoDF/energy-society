@@ -9,8 +9,11 @@ exports = module.exports = function(req, res) {
   // locals.section is used to set the currently selected
   // item in the header navigation.
   locals.section = 'events';
+  locals.filters = {
+    time: req.params.time,
+  };
   locals.data = {
-    events: []
+    events: [],
   };
 
 if(process.env.NODE_ENV == 'dev'){
@@ -26,14 +29,35 @@ if(process.env.NODE_ENV == 'dev'){
 }
   view.on('init', function(next) {
     
-    var q = keystone.list('Event').paginate({
+    if(locals.filters.time=='past'){
+      var q = keystone.list('Event').paginate({
+        page: req.query.page || 1,
+        perPage: 10,
+        maxPages: 10
+      }).where('date').lt(Date.now()).sort('date');
+      locals.data.time = 'past';
+    }
+    else{
+      var q = keystone.list('Event').paginate({
         page: req.query.page || 1,
         perPage: 10,
         maxPages: 10
       }).where('date').gt(Date.now()).sort('date');
+      locals.data.time = 'now';
+    }
+    
     
     q.exec(function(err, results) {
       locals.data.events = results;
+
+      var past = keystone.list('Event').paginate({
+        page: req.query.page || 1,
+        perPage: 10,
+        maxPages: 10
+      }).where('date').lt(Date.now()).sort('date')
+      past.exec(function(err, results){
+
+      })
       //console.log(locals.data.events);
       next(err);
     });

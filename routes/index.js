@@ -46,7 +46,7 @@ exports = module.exports = function(app) {
 	app.get('/conference', function(req,res){res.redirect('https://uclu.org/whats-on/clubs-societies/energy-society-conference-2015');});
 	// Hard-coded custom routes
 	app.get('/home', routes.views.index);
-	app.get('/events', routes.views.events);
+	app.get('/events/:time?', routes.views.events);
 	app.get('/events/event/:event', routes.views.event);
 	app.get('/committee', routes.views.committee);
 	app.get('/speakers', routes.views.speaker);

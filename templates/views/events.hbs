@@ -2,7 +2,7 @@
 <div class="container full-width rounded full-height">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-			<h1 class="title">Events</h1>
+			<h1 class="title"><a class="{{#ifeq data.time 'past'}}transparent{{/ifeq}} all-white" href="/events">Upcoming <span class="hidden-xs">Events</span></a> <a class="{{#ifeq data.time 'now'}}transparent{{/ifeq}} all-white pull-right" href="/events/past">Past <span class="hidden-xs">Events</span></a></h1>
             {{#if data.events.results}}
             <div class="events">
                 {{#each data.events.results}}
@@ -39,7 +39,12 @@
                 {{/each}}
             </div>
             {{else}}
-            <h3> No upcoming events.</h3>
+            {{#ifeq data.time 'past'}}
+                <h3>No past events.</h3>
+            {{else}}
+            <h3>No upcoming events.</h3>
+            <p>Check out <a href="/events/past">past events</a></p>
+            {{/ifeq}}
             {{/if}}
 		</div>
 	</div>
