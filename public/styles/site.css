@@ -89,6 +89,9 @@ body {
 .pagination > li:not(.active) > .all-white {
   color: #428bca; }
 
+.underlined {
+  border-bottom: solid 1px; }
+
 .small {
   font-size: 1.5rem; }
 
@@ -122,15 +125,6 @@ body {
     height: 90%; }
   .navbar-brand:hover .logo {
     opacity: 1; }
-
-.tab-menu {
-  margin-top: 2rem;
-  padding: 1rem;
-  width: 100%; }
-  .tab-menu .tabs {
-    display: inline-block;
-    margin: 0;
-    margin-right: 10rem; }
 
 #default-display {
   text-align: left;
