@@ -52,7 +52,7 @@ exports.create = {
 		{ 
 			'title': 'Gallery', 
 			'sortOrder':'8', 
-			'redirectURL': '/contact',
+			'redirectURL': '/gallery',
 			'state': 'hidden',
 		},
 	]
