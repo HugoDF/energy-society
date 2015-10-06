@@ -7,11 +7,11 @@
     "cloudinary": "^1.0.12",
     "dotenv": "~0.4.0",
     "express-handlebars": "~1.1.0",
+    "grunt": "^0.4.5",
     "handlebars": "~2.0.0",
     "keystone": "~0.2.39",
     "moment": "~2.8.1",
-    "node-sass": "~1.0.1",
-    "node-sass-middleware": "^0.4.0",
+    "node-sass": "^3.3.3",
     "underscore": "~1.7.0"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ keystone.init({
 	'name': 'Energy Society',
 	'brand': 'Energy Society',
 	
-	'sass': 'public',
+	// 'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/images/uclu-logo-flame-black.png',
 	'views': 'templates/views',
